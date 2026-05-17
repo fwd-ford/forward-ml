@@ -1,0 +1,68 @@
+{
+  "experiment": "02_robustness_without_proxies",
+  "status": "sandbox — warm-up dataset, not Ford official",
+  "scenarios": [
+    {
+      "scenario": "A_optimistic",
+      "n_features": 23,
+      "balanced_accuracy": 0.8634,
+      "macro_f1": 0.863,
+      "removed": []
+    },
+    {
+      "scenario": "B_realistic",
+      "n_features": 20,
+      "balanced_accuracy": 0.6804,
+      "macro_f1": 0.6804,
+      "removed": [
+        "organizacao_proxy",
+        "sensibilidade_preco_inicial",
+        "tempo_decisao_dias"
+      ]
+    },
+    {
+      "scenario": "C_pessimistic",
+      "n_features": 17,
+      "balanced_accuracy": 0.666,
+      "macro_f1": 0.6658,
+      "removed": [
+        "organizacao_proxy",
+        "sensibilidade_preco_inicial",
+        "tempo_decisao_dias",
+        "plano_manutencao",
+        "garantia_estendida",
+        "aceitou_marketing"
+      ]
+    }
+  ],
+  "honest_range": {
+    "optimistic_pct": 86.3,
+    "realistic_pct": 68.0,
+    "pessimistic_pct": 66.6
+  },
+  "per_class_f1": {
+    "A_optimistic": {
+      "fiel": 0.9819,
+      "economico": 0.8963,
+      "esquecido": 0.8088,
+      "abandono": 0.7649
+    },
+    "B_realistic": {
+      "fiel": 0.9025,
+      "economico": 0.6453,
+      "esquecido": 0.551,
+      "abandono": 0.6228
+    },
+    "C_pessimistic": {
+      "fiel": 0.8837,
+      "economico": 0.6332,
+      "esquecido": 0.5451,
+      "abandono": 0.6013
+    }
+  },
+  "decision_guidance": {
+    "trustworthy_ceiling": "Use realistic (B) as the number to report externally.",
+    "red_flag_if_above": 88.3,
+    "alert_if_below": 61.6
+  }
+}

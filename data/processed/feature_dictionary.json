@@ -1,0 +1,160 @@
+{
+  "groups": {
+    "identity": [
+      "cliente_id"
+    ],
+    "demographics": [
+      "idade",
+      "renda_mensal",
+      "score_credito",
+      "regiao",
+      "distancia_concessionaria_km"
+    ],
+    "usage_context": [
+      "uso_principal",
+      "km_estimado_mes",
+      "teve_ford_antes"
+    ],
+    "purchase": [
+      "canal_compra",
+      "categoria_veiculo",
+      "modelo_veiculo",
+      "valor_veiculo",
+      "usou_troca",
+      "entrada_pct",
+      "prazo_financiamento_meses",
+      "compra_a_vista",
+      "prestacao_renda_ratio"
+    ],
+    "addons": [
+      "garantia_estendida",
+      "plano_manutencao",
+      "aceitou_marketing"
+    ],
+    "latent_traits": [
+      "sensibilidade_preco_inicial",
+      "organizacao_proxy",
+      "tempo_decisao_dias"
+    ],
+    "death_curve": [
+      "fez_primeira_revisao_rede",
+      "meses_ate_primeira_revisao",
+      "perdeu_primeira_revisao",
+      "voltou_tarde_revoltado"
+    ],
+    "inverted_network": [
+      "share_revisoes_rede_24m",
+      "trouxe_oleo_externo"
+    ],
+    "humor_index": [
+      "satisfacao_marca_24m",
+      "pede_desconto_revisao",
+      "sensibilidade_desconto_pos"
+    ],
+    "lsv_actuals": [
+      "qtde_revisoes_24m",
+      "gasto_manutencao_rede_24m"
+    ],
+    "targets": [
+      "perfil_latente",
+      "churn_rede_24m"
+    ]
+  },
+  "pre_purchase": [
+    "idade",
+    "renda_mensal",
+    "score_credito",
+    "regiao",
+    "distancia_concessionaria_km",
+    "uso_principal",
+    "km_estimado_mes",
+    "teve_ford_antes",
+    "canal_compra",
+    "categoria_veiculo",
+    "modelo_veiculo",
+    "valor_veiculo",
+    "usou_troca",
+    "entrada_pct",
+    "prazo_financiamento_meses",
+    "compra_a_vista",
+    "prestacao_renda_ratio",
+    "garantia_estendida",
+    "plano_manutencao",
+    "aceitou_marketing",
+    "sensibilidade_preco_inicial",
+    "organizacao_proxy",
+    "tempo_decisao_dias"
+  ],
+  "post_purchase": [
+    "fez_primeira_revisao_rede",
+    "meses_ate_primeira_revisao",
+    "perdeu_primeira_revisao",
+    "voltou_tarde_revoltado",
+    "share_revisoes_rede_24m",
+    "trouxe_oleo_externo",
+    "satisfacao_marca_24m",
+    "pede_desconto_revisao",
+    "sensibilidade_desconto_pos",
+    "qtde_revisoes_24m",
+    "gasto_manutencao_rede_24m"
+  ],
+  "targets": [
+    "perfil_latente",
+    "churn_rede_24m"
+  ],
+  "dtypes": {
+    "cliente_id": "int64",
+    "perfil_latente": "object",
+    "idade": "float64",
+    "renda_mensal": "float64",
+    "score_credito": "float64",
+    "distancia_concessionaria_km": "float64",
+    "regiao": "object",
+    "uso_principal": "object",
+    "km_estimado_mes": "float64",
+    "teve_ford_antes": "float64",
+    "canal_compra": "object",
+    "categoria_veiculo": "object",
+    "modelo_veiculo": "object",
+    "valor_veiculo": "float64",
+    "usou_troca": "int64",
+    "entrada_pct": "float64",
+    "prazo_financiamento_meses": "float64",
+    "compra_a_vista": "int64",
+    "prestacao_renda_ratio": "float64",
+    "garantia_estendida": "float64",
+    "plano_manutencao": "float64",
+    "aceitou_marketing": "float64",
+    "sensibilidade_preco_inicial": "float64",
+    "organizacao_proxy": "float64",
+    "tempo_decisao_dias": "float64",
+    "fez_primeira_revisao_rede": "int64",
+    "meses_ate_primeira_revisao": "float64",
+    "perdeu_primeira_revisao": "int64",
+    "voltou_tarde_revoltado": "int64",
+    "trouxe_oleo_externo": "int64",
+    "pede_desconto_revisao": "int64",
+    "sensibilidade_desconto_pos": "float64",
+    "qtde_revisoes_24m": "float64",
+    "share_revisoes_rede_24m": "float64",
+    "gasto_manutencao_rede_24m": "float64",
+    "satisfacao_marca_24m": "float64",
+    "churn_rede_24m": "int64",
+    "is_discontinued": "int64"
+  },
+  "profile_order": [
+    "fiel",
+    "economico",
+    "esquecido",
+    "abandono"
+  ],
+  "discontinued_models": [
+    "EcoSport",
+    "Fiesta",
+    "Fiesta Sedan",
+    "Focus Hatch",
+    "Fusion",
+    "Ka",
+    "Ka Sedan"
+  ]
+}

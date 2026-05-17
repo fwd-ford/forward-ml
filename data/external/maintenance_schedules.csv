@@ -1,0 +1,66 @@
+model,revision_number,km,months,main_items,price_indicative_brl,source_url
+KA,1,5000,6,inspecao basica linha 2015+ (mao de obra cortesia),0,https://media.ford.com/content/fordmedia/fsa/br/pt/news/2014/08/13/ford-introduz-novo-plano-de-manutencao--mais-economico--para-tod.html
+KA,2,10000,12,oleo Motorcraft 5W20 + filtros + verificacoes,400-500,https://mercadoveiculos.com/info/revisao-ford-ka-2020
+KA,3,20000,24,oleo + filtros + velas + verificacao completa,550-650,https://mercadoveiculos.com/info/revisao-ford-ka-2020
+KA,4,30000,36,oleo + filtros + fluido freio + injecao,650-750,https://mercadoveiculos.com/info/revisao-ford-ka-2020
+KA,5,40000,48,oleo + filtros + correias + transmissao,800-900,https://mercadoveiculos.com/info/revisao-ford-ka-2020
+KA,6,50000,60,oleo + arrefecimento + direcao + suspensao,550-650,https://mercadoveiculos.com/info/revisao-ford-ka-2020
+KA,7,60000,72,revisao ampla + correia dentada (CRITICA),1000-1200,https://mercadoveiculos.com/info/revisao-ford-ka-2020
+KA,8,70000,84,oleo + filtros + verificacoes,,https://www.italiaricambi.com.br/kit-revisao-ford-70000-km-ford-ka
+KA,9,80000,96,oleo + filtros + velas,,https://www.italiaricambi.com.br/kit-revisao-ford-80000-km-96-meses-ford-ka-10-12v-3-cilindros-ti-vct-de-2014-em-diante
+KA,10,100000,120,oleo + filtros + correias + revisao geral,,https://www.italiaricambi.com.br/kit-10-revisao-100000-km-ford-ka-15-12v-3-cilindros-dragon-2018-2019-2020-2021
+FIESTA,1,5000,6,inspecao basica linha 2015+ (mao de obra cortesia),0,https://media.ford.com/content/fordmedia/fsa/br/pt/news/2014/08/13/ford-introduz-novo-plano-de-manutencao--mais-economico--para-tod.html
+FIESTA,2,10000,12,oleo + filtros + verificacao,520,https://www.car.blog.br/2017/11/ford-new-fiesta-2018-consumo-precos-e.html
+FIESTA,3,20000,24,oleo + filtros completos,520,https://www.car.blog.br/2017/11/ford-new-fiesta-2018-consumo-precos-e.html
+FIESTA,4,30000,36,oleo + filtro combustivel + verificacao geral,520,https://www.car.blog.br/2017/11/ford-new-fiesta-2018-consumo-precos-e.html
+FIESTA,5,40000,48,Ford Protect Advanced (4 rev. total R$ 2966),750,https://www.car.blog.br/2017/11/ford-new-fiesta-2018-consumo-precos-e.html
+FIESTA,6,50000,60,Ford Protect Premium (5 rev. total R$ 3573),700,https://www.car.blog.br/2017/11/ford-new-fiesta-2018-consumo-precos-e.html
+ECOSPORT,1,5000,6,inspecao basica linha 2015+ (mao de obra cortesia),0,https://media.ford.com/content/fordmedia/fsa/br/pt/news/2014/08/13/ford-introduz-novo-plano-de-manutencao--mais-economico--para-tod.html
+ECOSPORT,2,10000,12,oleo + filtros + verificacoes,450-600,https://mercadoveiculos.com/info/revisao-ford-ecosport-2020
+ECOSPORT,3,20000,24,oleo + filtros completos + velas,700-850,https://mercadoveiculos.com/info/revisao-ford-ecosport-2020
+ECOSPORT,4,30000,36,oleo + filtros + fluido freio + injecao,850-1000,https://mercadoveiculos.com/info/revisao-ford-ecosport-2020
+ECOSPORT,5,40000,48,oleo + correias + transmissao,1100-1300,https://mercadoveiculos.com/info/revisao-ford-ecosport-2020
+ECOSPORT,6,50000,60,oleo + arrefecimento + direcao + suspensao,750-900,https://mercadoveiculos.com/info/revisao-ford-ecosport-2020
+ECOSPORT,7,60000,72,revisao ampla + correia dentada (CRITICA),1400-1700,https://mercadoveiculos.com/info/revisao-ford-ecosport-2020
+ECOSPORT,8,80000,96,trocas escalonadas,,https://www.italiaricambi.com.br/kit-revisao-ford-80000-km
+ECOSPORT,9,100000,120,revisao geral + embreagem,,https://www.italiaricambi.com.br/kit-10-revisao-100000-km-ford-ecosport-15-12v-3-cilindros-dragon-2018-2019-2020-2021
+FOCUS,1,5000,6,inspecao basica linha 2015+ (mao de obra cortesia),0,https://media.ford.com/content/fordmedia/fsa/br/pt/news/2014/08/13/ford-introduz-novo-plano-de-manutencao--mais-economico--para-tod.html
+FOCUS,2,10000,12,oleo + filtros + verificacoes,500-700,https://luna.ac/blog/quanto-custa-manter-um-ford-focus
+FOCUS,3,20000,24,oleo + filtros completos,650-900,https://luna.ac/blog/quanto-custa-manter-um-ford-focus
+FOCUS,4,30000,36,oleo + filtros + fluido freio,800-1100,https://www.italiaricambi.com.br/kit-revisao-ford-30000-km-36-meses-ford-focus-20-16v-de-2013-em-diante
+FOCUS,5,40000,48,oleo + correias + transmissao,1000-1300,https://www.italiaricambi.com.br/kit-revisao-ford-30000-km-36-meses-ford-focus-20-16v-de-2013-em-diante
+FOCUS,6,50000,60,oleo + arrefecimento + suspensao,800-1100,https://www.italiaricambi.com.br/kit-revisao-ford-50000-km-60-meses-ford-focus-20-16v-de-2013-em-diante
+FOCUS,7,60000,72,revisao ampla + correia dentada (CRITICA),1400-1800,https://luna.ac/blog/quanto-custa-manter-um-ford-focus
+RANGER,1,10000,12,oleo + filtros + verificacoes basicas + lavagem cortesia,1129-1199,https://garagem360.com.br/veja-custos-de-manutencao-revisao-e-seguro-da-ford-ranger/
+RANGER,2,20000,24,oleo + filtros ar + filtro combustivel,1129-1199,https://garagem360.com.br/veja-custos-de-manutencao-revisao-e-seguro-da-ford-ranger/
+RANGER,3,30000,36,oleo + limpeza injetores + embreagem,1429-1499,https://garagem360.com.br/veja-custos-de-manutencao-revisao-e-seguro-da-ford-ranger/
+RANGER,4,40000,48,oleo + correias + transmissao,1219-1249,https://garagem360.com.br/veja-custos-de-manutencao-revisao-e-seguro-da-ford-ranger/
+RANGER,5,50000,60,oleo + arrefecimento + direcao + suspensao,1219-1249,https://garagem360.com.br/veja-custos-de-manutencao-revisao-e-seguro-da-ford-ranger/
+RANGER,6,60000,72,revisao ampla + correia dentada + fluidos,1649-1679,https://garagem360.com.br/veja-custos-de-manutencao-revisao-e-seguro-da-ford-ranger/
+RANGER_V6_2023,1,16000,12,Revisao Inteligente (oleo + filtros + 60 itens),1500-2300,https://www.ford.com.br/servico-ao-cliente/revisao-ford/ranger/
+RANGER_V6_2023,2,32000,24,Revisao Inteligente (oleo + filtros + filtro combustivel),1500-2300,https://www.ford.com.br/servico-ao-cliente/revisao-ford/ranger/
+RANGER_V6_2023,3,48000,36,Revisao Inteligente (oleo + correias + transmissao),1500-2300,https://www.ford.com.br/servico-ao-cliente/revisao-ford/ranger/
+RANGER_V6_2023,4,64000,48,Revisao Inteligente (oleo + suspensao + freios),1800-2500,https://www.ford.com.br/servico-ao-cliente/revisao-ford/ranger/
+RANGER_V6_2023,5,80000,60,Revisao Inteligente ampla,2000-2500,https://www.ford.com.br/servico-ao-cliente/revisao-ford/ranger/
+MAVERICK,1,10000,12,oleo + filtros + verificacoes,1208,https://www.justos.com.br/blog/quanto-custa-manter-um-ford-maverick
+MAVERICK,2,20000,24,oleo + filtros ar/combustivel,1208,https://www.justos.com.br/blog/quanto-custa-manter-um-ford-maverick
+MAVERICK,3,30000,36,oleo + limpeza injetores,1383,https://www.justos.com.br/blog/quanto-custa-manter-um-ford-maverick
+MAVERICK,4,40000,48,oleo + correias + transmissao,1484,https://www.justos.com.br/blog/quanto-custa-manter-um-ford-maverick
+MAVERICK,5,50000,60,oleo + arrefecimento + direcao + suspensao,1258,https://www.justos.com.br/blog/quanto-custa-manter-um-ford-maverick
+MAVERICK,6,60000,72,revisao ampla + correia + fluidos,1893,https://www.justos.com.br/blog/quanto-custa-manter-um-ford-maverick
+MAVERICK_FHEV,1,16000,12,Revisao Inteligente FHEV (oleo + filtros + 60 itens),1300-2000,https://www.ford.com.br/servico-ao-cliente/revisao-ford/maverick-fhev/
+MAVERICK_FHEV,2,32000,24,Revisao Inteligente FHEV + filtro combustivel,1300-2000,https://www.ford.com.br/servico-ao-cliente/revisao-ford/maverick-fhev/
+MAVERICK_FHEV,3,48000,36,Revisao Inteligente FHEV + correias + transmissao hibrida,1500-2300,https://www.ford.com.br/servico-ao-cliente/revisao-ford/maverick-fhev/
+MAVERICK_FHEV,4,64000,48,Revisao Inteligente FHEV + suspensao + freios,1500-2300,https://www.ford.com.br/servico-ao-cliente/revisao-ford/maverick-fhev/
+MAVERICK_FHEV,5,80000,60,Revisao Inteligente FHEV ampla,1800-2500,https://www.ford.com.br/servico-ao-cliente/revisao-ford/maverick-fhev/
+TERRITORY,1,10000,12,oleo + filtros + verificacoes basicas,900-1200,https://mercadoveiculos.com/info/revisao-ford-territory-2024
+TERRITORY,2,20000,24,oleo + filtros ar/combustivel (CRITICA),1000-1400,https://mercadoveiculos.com/info/revisao-ford-territory-2024
+TERRITORY,3,30000,36,oleo + limpeza injetores,1100-1700,https://mercadoveiculos.com/info/revisao-ford-territory-2024
+TERRITORY,4,40000,48,oleo + correias + transmissao,1200-1900,https://mercadoveiculos.com/info/revisao-ford-territory-2024
+TERRITORY,5,50000,60,oleo + arrefecimento + direcao + suspensao,1300-2000,https://mercadoveiculos.com/info/revisao-ford-territory-2024
+TERRITORY,6,60000,72,revisao ampla + correia dentada + fluidos (CRITICA),1500-2300,https://mercadoveiculos.com/info/revisao-ford-territory-2024
+TRANSIT,1,20000,12,oleo motor + filtros + avaliacao todos os sistemas (60 itens),0-1500,https://media.ford.com/content/fordmedia/fsa/br/pt/news/2021/11/03/ford-transit-tem-pacote-gratuito-de-revisao-e-pecas-como-oferta-.html
+TRANSIT,2,40000,24,oleo + filtros + verificacao 60 itens + pecas desgaste,0-1800,https://media.ford.com/content/fordmedia/fsa/br/pt/news/2021/11/03/ford-transit-tem-pacote-gratuito-de-revisao-e-pecas-como-oferta-.html
+TRANSIT,3,60000,36,oleo + filtros + fluidos + revisao ampla,0-2200,https://media.ford.com/content/fordmedia/fsa/br/pt/news/2021/11/03/ford-transit-tem-pacote-gratuito-de-revisao-e-pecas-como-oferta-.html
+TRANSIT,4,80000,48,oleo + correias + transmissao + freios,1800-2500,https://www.ford.com.br/servico-ao-cliente/revisao-ford/transit-bus/
+TRANSIT,5,100000,60,revisao ampla + correia dentada,2200-3000,https://www.ford.com.br/servico-ao-cliente/revisao-ford/transit-bus/
