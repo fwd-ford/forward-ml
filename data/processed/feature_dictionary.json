@@ -1,160 +1,148 @@
 {
+  "version": "2.0",
+  "updated": "2026-05-17",
+  "dataset": "vin_share_Desafio_02 (official Ford, received 2026-05-11)",
+  "source_file": "data/processed/vin_features.csv",
+  "row_unit": "1 row per unique VIN_Hash",
+  "row_count": 175554,
+  "column_count": 22,
   "groups": {
     "identity": [
-      "cliente_id"
+      "vin_hash",
+      "model_name",
+      "model_year"
     ],
-    "demographics": [
-      "idade",
-      "renda_mensal",
-      "score_credito",
-      "regiao",
-      "distancia_concessionaria_km"
+    "frequency": [
+      "events_count",
+      "tenure_days",
+      "gap_avg_days",
+      "gap_min_days",
+      "gap_max_days",
+      "gap_last_days"
     ],
-    "usage_context": [
-      "uso_principal",
-      "km_estimado_mes",
-      "teve_ford_antes"
+    "recency": [
+      "first_service_date",
+      "last_service_date",
+      "days_since_last_service"
     ],
-    "purchase": [
-      "canal_compra",
-      "categoria_veiculo",
-      "modelo_veiculo",
-      "valor_veiculo",
-      "usou_troca",
-      "entrada_pct",
-      "prazo_financiamento_meses",
-      "compra_a_vista",
-      "prestacao_renda_ratio"
+    "usage": [
+      "km_max",
+      "km_min"
     ],
-    "addons": [
-      "garantia_estendida",
-      "plano_manutencao",
-      "aceitou_marketing"
+    "loyalty": [
+      "dealers_distinct",
+      "primary_dealer",
+      "primary_dealer_share"
     ],
-    "latent_traits": [
-      "sensibilidade_preco_inicial",
-      "organizacao_proxy",
-      "tempo_decisao_dias"
+    "service_mix": [
+      "service_types_distinct",
+      "service_codes_distinct"
     ],
-    "death_curve": [
-      "fez_primeira_revisao_rede",
-      "meses_ate_primeira_revisao",
-      "perdeu_primeira_revisao",
-      "voltou_tarde_revoltado"
-    ],
-    "inverted_network": [
-      "share_revisoes_rede_24m",
-      "trouxe_oleo_externo"
-    ],
-    "humor_index": [
-      "satisfacao_marca_24m",
-      "pede_desconto_revisao",
-      "sensibilidade_desconto_pos"
-    ],
-    "lsv_actuals": [
-      "qtde_revisoes_24m",
-      "gasto_manutencao_rede_24m"
-    ],
-    "targets": [
-      "perfil_latente",
-      "churn_rede_24m"
+    "lifecycle": [
+      "invoice_date",
+      "sales_date",
+      "warranty_start"
     ]
   },
-  "pre_purchase": [
-    "idade",
-    "renda_mensal",
-    "score_credito",
-    "regiao",
-    "distancia_concessionaria_km",
-    "uso_principal",
-    "km_estimado_mes",
-    "teve_ford_antes",
-    "canal_compra",
-    "categoria_veiculo",
-    "modelo_veiculo",
-    "valor_veiculo",
-    "usou_troca",
-    "entrada_pct",
-    "prazo_financiamento_meses",
-    "compra_a_vista",
-    "prestacao_renda_ratio",
-    "garantia_estendida",
-    "plano_manutencao",
-    "aceitou_marketing",
-    "sensibilidade_preco_inicial",
-    "organizacao_proxy",
-    "tempo_decisao_dias"
-  ],
-  "post_purchase": [
-    "fez_primeira_revisao_rede",
-    "meses_ate_primeira_revisao",
-    "perdeu_primeira_revisao",
-    "voltou_tarde_revoltado",
-    "share_revisoes_rede_24m",
-    "trouxe_oleo_externo",
-    "satisfacao_marca_24m",
-    "pede_desconto_revisao",
-    "sensibilidade_desconto_pos",
-    "qtde_revisoes_24m",
-    "gasto_manutencao_rede_24m"
-  ],
-  "targets": [
-    "perfil_latente",
-    "churn_rede_24m"
-  ],
   "dtypes": {
-    "cliente_id": "int64",
-    "perfil_latente": "object",
-    "idade": "float64",
-    "renda_mensal": "float64",
-    "score_credito": "float64",
-    "distancia_concessionaria_km": "float64",
-    "regiao": "object",
-    "uso_principal": "object",
-    "km_estimado_mes": "float64",
-    "teve_ford_antes": "float64",
-    "canal_compra": "object",
-    "categoria_veiculo": "object",
-    "modelo_veiculo": "object",
-    "valor_veiculo": "float64",
-    "usou_troca": "int64",
-    "entrada_pct": "float64",
-    "prazo_financiamento_meses": "float64",
-    "compra_a_vista": "int64",
-    "prestacao_renda_ratio": "float64",
-    "garantia_estendida": "float64",
-    "plano_manutencao": "float64",
-    "aceitou_marketing": "float64",
-    "sensibilidade_preco_inicial": "float64",
-    "organizacao_proxy": "float64",
-    "tempo_decisao_dias": "float64",
-    "fez_primeira_revisao_rede": "int64",
-    "meses_ate_primeira_revisao": "float64",
-    "perdeu_primeira_revisao": "int64",
-    "voltou_tarde_revoltado": "int64",
-    "trouxe_oleo_externo": "int64",
-    "pede_desconto_revisao": "int64",
-    "sensibilidade_desconto_pos": "float64",
-    "qtde_revisoes_24m": "float64",
-    "share_revisoes_rede_24m": "float64",
-    "gasto_manutencao_rede_24m": "float64",
-    "satisfacao_marca_24m": "float64",
-    "churn_rede_24m": "int64",
-    "is_discontinued": "int64"
+    "vin_hash": "object",
+    "events_count": "int64",
+    "first_service_date": "datetime64",
+    "last_service_date": "datetime64",
+    "days_since_last_service": "int64",
+    "tenure_days": "int64",
+    "gap_avg_days": "float64",
+    "gap_min_days": "int64",
+    "gap_max_days": "int64",
+    "gap_last_days": "int64",
+    "km_max": "int64",
+    "km_min": "int64",
+    "dealers_distinct": "int64",
+    "primary_dealer": "object",
+    "primary_dealer_share": "float64",
+    "model_name": "object",
+    "model_year": "int64",
+    "invoice_date": "datetime64",
+    "sales_date": "datetime64",
+    "warranty_start": "datetime64",
+    "service_types_distinct": "int64",
+    "service_codes_distinct": "int64"
   },
-  "profile_order": [
+  "engineered_targets": {
+    "churned": {
+      "definition": "days_since_last_service > 365",
+      "reference_date": "max(ServiceDate) in dataset (NOT datetime.now())",
+      "exclude_when": "tenure_days < 365 (insufficient observation window)",
+      "expected_positive_rate": "30-40% of trainable VINs"
+    },
+    "at_risk": {
+      "definition": "gap_last_days > 1.5 * gap_avg_days AND days_since_last_service > 90",
+      "exclude_when": "events_count < 2"
+    }
+  },
+  "k_means_features_recommended": [
+    "events_count",
+    "tenure_days",
+    "gap_avg_days",
+    "gap_last_days",
+    "days_since_last_service",
+    "dealers_distinct",
+    "primary_dealer_share",
+    "service_codes_distinct",
+    "km_per_month_derived",
+    "is_loyal_to_dealer_derived",
+    "is_single_event_derived"
+  ],
+  "derived_features_to_add_in_notebook": {
+    "age_at_last_service_days": "(last_service_date - sales_date).days",
+    "km_per_month": "km_max / (tenure_days / 30)",
+    "gap_last_vs_avg": "gap_last_days / gap_avg_days",
+    "is_loyal_to_dealer": "primary_dealer_share > 0.8 (bool)",
+    "is_warranty_active": "(last_service_date - warranty_start).days < 3*365 (bool)",
+    "is_single_event": "events_count == 1 (bool)"
+  },
+  "data_quality_issues": {
+    "km_outliers": "values up to 955M exist — clip to 500_000",
+    "gap_avg_days_nan": "single-event VINs have NaN — impute or flag separately",
+    "dates_mixed_format": "official xlsx uses dd/mm/yyyy and m/d/yyyy mixed; vin_features.csv already parsed correctly"
+  },
+  "selection_bias_note": "Dataset only contains VINs that visited the official Ford service network. The ~95% of Ford vehicles that go to independent shops are invisible. Models predict churn WITHIN the observable population, not from total fleet of ~3.5-5M Ford vehicles in Brazil.",
+  "profile_personas_for_kmeans_naming": [
     "fiel",
     "economico",
     "esquecido",
     "abandono"
   ],
-  "discontinued_models": [
-    "EcoSport",
-    "Fiesta",
-    "Fiesta Sedan",
-    "Focus Hatch",
-    "Fusion",
-    "Ka",
-    "Ka Sedan"
-  ]
+  "discontinued_models_in_dataset": [
+    "KA",
+    "FIESTA",
+    "ECOSPORT",
+    "FOCUS",
+    "EDGE",
+    "FUSION/MONDEO"
+  ],
+  "active_models_in_dataset": [
+    "RANGER",
+    "MAVERICK",
+    "TERRITORY",
+    "BRONCO SPORT",
+    "TRANSIT",
+    "MUSTANG",
+    "MUSTANG MACH-E",
+    "F-150",
+    "F-SERIES"
+  ],
+  "model_distribution_top": {
+    "RANGER": 0.567,
+    "KA": 0.222,
+    "ECOSPORT": 0.075,
+    "TERRITORY": 0.044,
+    "BRONCO SPORT": 0.028
+  },
+  "external_sources_joinable": {
+    "data/external/fipe_values.csv": "by (model_name, model_year)",
+    "data/external/maintenance_schedules.csv": "by (model_name) → expected service interval",
+    "data/external/ford_dealers.csv": "by city/UF (DealerCode → name mapping is proprietary)",
+    "data/external/ford_recalls.csv": "by (model_name, model_year) for Recall Gateway"
+  }
 }

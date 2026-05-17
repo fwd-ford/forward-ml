@@ -20,8 +20,6 @@ data/models/*
 !data/processed/vin_features.csv
 !data/processed/profile.json
 !data/processed/feature_dictionary.json
-!data/processed/ford_clientes_clean.parquet
-!data/processed/learnings_experiment_*.json
 .DS_Store
 .venv/
 venv/

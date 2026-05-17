@@ -16,6 +16,13 @@ Dados derivados do dataset oficial Ford (`vin_share_Desafio_02.xlsx`), gerados p
 - Gerado por: `scripts/profile_dataset.py`
 - Útil pra: validar premissas, gerar slides de EDA, alimentar dashboards
 
+### `feature_dictionary.json`
+- **v2.0 (17/05/2026)** — dicionário das 22 colunas de `vin_features.csv` com agrupamentos lógicos (identity, frequency, recency, usage, loyalty, service_mix, lifecycle).
+- Define também targets engenheirados (`churned`, `at_risk`) com critérios formais
+- Lista features derivadas a criar no notebook (km_per_month, gap_last_vs_avg, etc.)
+- Documenta data quality issues e selection bias
+- Aponta junções possíveis com `data/external/`
+
 ## Reprodutibilidade
 
 ```bash
@@ -23,6 +30,14 @@ Dados derivados do dataset oficial Ford (`vin_share_Desafio_02.xlsx`), gerados p
 python scripts/profile_dataset.py
 python scripts/internal_analysis.py
 ```
+
+## Histórico de limpeza (17/05/2026)
+
+Os arquivos do trabalho prévio sobre o dataset sintético foram **removidos** nesta data:
+- `ford_clientes_clean.parquet` (21 MB — sintético limpo)
+- `learnings_experiment_01.json`, `learnings_experiment_02.json` (métricas de experimentos no sintético)
+
+Razão: pós dataset oficial, o sintético deixou de ser ativo. Histórico preservado no git log. Caso seja necessário reativá-lo (notebook 06 — propensão socioeconômica paralela), o CSV bruto `ford_clientes_historico_completo.csv` continua disponível no workspace local (não versionado).
 
 ## Contexto
 
