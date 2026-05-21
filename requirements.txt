@@ -1,4 +1,4 @@
-pandas>=2.0
+pandas>=3.0.3
 numpy>=1.24
 scikit-learn>=1.8.0
 xgboost>=2.0
