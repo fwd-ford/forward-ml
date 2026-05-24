@@ -1,0 +1,31 @@
+# Análise da banda B08 [0.7-0.8)
+# n_VINs = 3,507  |  churn_real = 43.71%  |  score_medio = 0.7385
+
+# === Composição por MODELO de carro ===
+modelo,n,pct_da_banda,churn_real_pct
+RANGER,1895,54.03,18.73
+KA,711,20.27,100.0
+ECOSPORT,265,7.56,100.0
+TERRITORY,168,4.79,44.64
+MAVERICK,164,4.68,21.34
+F-150,101,2.88,5.94
+BRONCO SPORT,96,2.74,35.42
+TRANSIT,96,2.74,43.75
+MUSTANG,9,0.26,88.89
+EDGE,2,0.06,100.0
+
+# === Composição por CLUSTER K-means ===
+cluster,n,pct_da_banda,churn_real_pct
+fiel,1900,54.18,38.0
+esquecido,1169,33.33,41.92
+abandono,300,8.55,100.0
+economico,138,3.93,15.22
+
+# === Médias de features ===
+feature,valor
+n_servicos_medio,3.11
+tenure_medio_dias,646.5
+dias_sem_servico_medio,526.6
+km_medio,41238.0
+dealer_share_medio,0.86
+single_event_pct,12.55

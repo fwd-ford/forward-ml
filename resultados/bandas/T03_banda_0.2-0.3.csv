@@ -1,0 +1,35 @@
+# Análise da banda B03 [0.2-0.3)
+# n_VINs = 19,611  |  churn_real = 24.72%  |  score_medio = 0.2427
+
+# === Composição por MODELO de carro ===
+modelo,n,pct_da_banda,churn_real_pct
+RANGER,12554,64.02,14.67
+TERRITORY,1906,9.72,19.52
+KA,1490,7.6,100.0
+MAVERICK,1274,6.5,11.77
+BRONCO SPORT,911,4.65,15.48
+ECOSPORT,601,3.06,100.0
+TRANSIT,368,1.88,39.95
+F-150,364,1.86,4.12
+MUSTANG,113,0.58,66.37
+MUSTANG MACH-E,19,0.1,21.05
+EDGE,6,0.03,100.0
+KHC,2,0.01,100.0
+KFA,2,0.01,100.0
+FOCUS,1,0.01,100.0
+
+# === Composição por CLUSTER K-means ===
+cluster,n,pct_da_banda,churn_real_pct
+fiel,9591,48.91,23.07
+economico,5865,29.91,8.3
+esquecido,3628,18.5,44.68
+abandono,527,2.69,100.0
+
+# === Médias de features ===
+feature,valor
+n_servicos_medio,2.61
+tenure_medio_dias,610.3
+dias_sem_servico_medio,315.8
+km_medio,34499.0
+dealer_share_medio,0.922
+single_event_pct,32.61
