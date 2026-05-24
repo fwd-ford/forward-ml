@@ -148,8 +148,56 @@ Resolve o problema do V2 onde single-event ficava +15pp **over-confident** e hol
 - Dataset só vê VINs que passaram pela rede oficial pelo menos 1 vez. **Os 95% da frota Ford que vão pra independente NÃO estão aqui.**
 - Não generaliza pra "frota total Ford".
 
-### LGPD
-- `VIN_Hash` é SHA1 robusto. Não tentar reverter ou cruzar com fontes externas.
+### LGPD — Proteção de dados pessoais
+
+O modelo processa identificadores veiculares pseudonimizados e features comportamentais derivadas de eventos de serviço. Esta seção documenta o tratamento conforme Lei 13.709/2018 (LGPD).
+
+#### Base legal (art. 7)
+- **Hipótese aplicada:** `legítimo interesse` (art. 7, IX) — retenção pós-venda na rede oficial Ford, com benefício direto para o titular (lembretes de manutenção, ofertas personalizadas, segurança veicular via recall).
+- **Teste de proporcionalidade:** finalidade legítima ✓, necessidade (não há substituto menos invasivo do que features agregadas) ✓, balanceamento (titular tem direito ao opt-out via `anonymize_customer()` — vide forward-infra migration 013) ✓.
+- **NÃO aplicável:** consentimento explícito (não foi coletado pelo desafio acadêmico) e execução de contrato (modelo não é cláusula contratual).
+
+#### Finalidade (art. 6, I — adequação)
+- **Única finalidade declarada:** estimar `churn_probability` por VIN para campanhas de retenção (CRM, ofertas de revisão, agendamento proativo).
+- **Vedado:** uso para precificação de seguro, scoring de crédito, transferência a terceiros não-Ford, ou enriquecimento de cadastro fora do escopo pós-venda.
+
+#### Dados tratados (art. 5, I e II)
+- **Pseudonimização (art. 13, IV):** `VIN_Hash` = SHA1(VIN). Em 5M tentativas de reversão dirigida, 0 colisões/recoveries (vide `forward-infra/SECURITY.md`, STRIDE-S2). Considera-se **pseudonimização robusta, não anonimização** — re-identificação continua tecnicamente possível mediante cruzamento autorizado com tabela mestre (que NÃO está neste repositório).
+- **Features comportamentais (22):** contagens e médias agregadas — `events_count`, `tenure_days`, `km_per_month`, `dealers_distinct`, `primary_dealer_share`, etc. Nenhuma feature identifica diretamente o titular.
+- **Dados removidos por design:** nome, CPF, telefone, endereço, e-mail, CEP, gênero, renda — nada disso entra no pipeline (não existe no dataset oficial v2).
+- **NÃO há dados sensíveis (art. 11):** sem origem racial, religião, saúde, biometria, sindical, política.
+
+#### Retenção (art. 16)
+- **Artefato do modelo (`churn_scorer_v3.joblib`, ~25 MB):** retenção de 12 meses ou até retreino subsequente (a cada 3 meses por governança). Versões antigas (`v1`, `v2`) podem ser preservadas em arquivo morto para auditoria, sem reuso operacional.
+- **Scores produzidos (`client_scores` em Supabase):** retenção alinhada à política de CRM da Ford — recomendação: 24 meses, com purge automático via job agendado.
+- **Features intermediárias (`vin_features.csv`):** regeneráveis on-demand a partir dos eventos brutos — não há motivo para reter por mais de 30 dias após o treino.
+- **Dataset bruto (`vin_share_Desafio_02.xlsx`):** sob custódia da coordenação FIAP; este repositório não redistribui.
+
+#### Direitos do titular (art. 18)
+- **Confirmação e acesso (art. 18, I e II):** atendidos via endpoint `GET /clientes/{vin}/scores` (forward-api-java), que retorna o último score do VIN e a versão do modelo.
+- **Correção (art. 18, III):** se eventos de serviço estiverem incorretos, a correção é feita no sistema-fonte (DMS dealer); o próximo retreino propaga.
+- **Anonimização/eliminação (art. 18, IV e VI):** procedimento operacional via `anonymize_customer(vin_hash)` em `forward-infra/migrations/013_anonymize_customer.sql` — apaga o registro do titular em todas as tabelas e re-hash o VIN com salt rotacionado, tornando o histórico no modelo permanentemente desvinculado.
+- **Portabilidade (art. 18, V):** features agregadas exportáveis em CSV mediante solicitação ao DPO.
+- **Revisão de decisão automatizada (art. 20):** este modelo **não toma decisão isolada com efeitos jurídicos relevantes** — saída é insumo para campanha de marketing/retenção, sempre revisada por operador humano antes de contato com o cliente. Ainda assim, garante-se direito a explicação via SHAP values disponíveis por VIN.
+
+#### Transferência internacional (art. 33)
+- **Treino:** 100% local (GPU CUDA on-premise / workstation do desenvolvedor, Brasil). Sem transferência internacional durante a fase de modelagem.
+- **Inferência:** prevista em infraestrutura nacional (Supabase região São Paulo conforme `forward-infra/README.md`). Caso futura migração para cloud em outra região seja avaliada, exigir **DPIA específica** e cláusulas-padrão de transferência internacional.
+
+#### Encarregado / DPO
+- **Encarregado pelo tratamento (art. 41):** Lucca Saraiva Borges (`webbersaraivaborges@gmail.com`) — interlocutor do projeto acadêmico com a ANPD e titulares.
+- Em deploy real Ford, este papel migraria para o DPO corporativo Ford Brasil.
+
+#### Riscos residuais
+- **Re-identificação por cross-reference:** mesmo com VIN pseudonimizado, cruzamento com FENABRAVE (emplacamentos), FIPE (valores), DETRAN (proprietário) **poderia** desanonimizar. Cláusula contratual com qualquer integrador externo deve proibir esse cruzamento.
+- **Inferência de atributos sensíveis:** `model_name` + `dealer_state` podem servir de proxy para perfil socioeconômico. Mitigação: não usar o score para decisões com impacto adverso (negação de crédito, seguro, garantia).
+- **Vazamento do artefato joblib:** o modelo serializado **não contém PII**, mas contém os feature splits do XGBoost que poderiam, em ataque inverso, ajudar a inferir distribuição de comportamento da base. Mitigação: storage em bucket privado com IAM restrito, sem URL pública.
+- **Pseudonimização não é anonimização (parecer ANPD 2022):** este repositório trata `VIN_Hash` como **dado pessoal** para todos os efeitos da LGPD, mesmo após hash.
+
+#### Referências cruzadas
+- [`forward-infra/SECURITY.md`](../forward-infra/SECURITY.md) — STRIDE completo, threat S2 (spoofing por VIN reversal)
+- [`forward-infra/migrations/013_anonymize_customer.sql`](../forward-infra/migrations/013_anonymize_customer.sql) — implementação do direito de exclusão
+- [LGPD art. 7](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) (bases legais), art. 18 (direitos do titular), art. 50 (boas práticas)
 
 ## Como usar (deploy)
 
