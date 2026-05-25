@@ -27,6 +27,7 @@ venv/
 # Large CSV/data files (regeneráveis via scripts)
 ford_clientes_historico_completo.csv
 resultados/*.csv
+resultados/**/*.csv
 
 # Build/cache from notebooks
 notebooks/.ipynb_checkpoints/
@@ -36,4 +37,3 @@ notebooks/_*.py
 # Editor lock files
 ~$*
 *.lock
-
