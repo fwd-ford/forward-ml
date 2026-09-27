@@ -1,0 +1,34 @@
+name: DevSecOps
+
+# Report-only security pipeline (SAST, SCA, secrets, IaC, container, SBOM).
+# Findings land in Security > Code scanning; nothing here blocks a PR.
+# Definition: https://github.com/fwd-ford/.github/blob/main/.github/workflows/devsecops.yml
+# Python ML service: CodeQL python, pip-audit over the resolved requirements.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "35 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: read
+
+concurrency:
+  group: devsecops-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  devsecops:
+    name: DevSecOps
+    uses: fwd-ford/.github/.github/workflows/devsecops.yml@main
+    with:
+      codeql-languages: '["python","actions"]'
+      semgrep-config: "p/default p/python p/owasp-top-ten"
+      python-requirements: requirements.txt
+      run-container-scan: false
