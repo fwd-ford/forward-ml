@@ -26,7 +26,7 @@ concurrency:
 jobs:
   devsecops:
     name: DevSecOps
-    uses: fwd-ford/.github/.github/workflows/devsecops.yml@main
+    uses: fwd-ford/.github/.github/workflows/devsecops.yml@ci/devsecops-maven-offline
     with:
       codeql-languages: '["python","actions"]'
       semgrep-config: "p/default p/python p/owasp-top-ten"
